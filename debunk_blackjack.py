@@ -917,31 +917,5 @@ class BlackJack:
         return capital >= target
 
 
-if __name__ == "__main__":
-    bj = BlackJack()
-    # targets = [110000, 150000, 200000, 300000]
-    # trials = 2000
-    # for t in targets:
-    #     wins = 0
-    #     for _ in range(trials):
-    #         if bj.combat1vs1(capital=100000, bet=10000, target=t, vizualize=False):
-    #             wins += 1
-    #     print(f"target={t}, win_fraction={wins}/{trials} => {wins/trials:.4f}")
-    win_rate = []
-    draw_rate = []
-    loss_rate = []
-    for i in range(16, 19):
-        result = bj.Monto_carlo_black_jack(ultis=i)
-        win_rate.append(result['win_rate'])
-        draw_rate.append(result['draw_rate'])
-        loss_rate.append(result['loss_rate'])
-    plt.plot([16, 17, 18], win_rate, label='win rate per ultis')
-    plt.plot([16, 17, 18], draw_rate, label='draw rate per ultis')
-    plt.plot([16, 17, 18], loss_rate, label='loss rate per ultis')
-    plt.title("win Rate dealer")
-    plt.xlabel('ultis')
-    plt.ylabel('%')
-    plt.legend()
-    plt.show()
-
                         
+
