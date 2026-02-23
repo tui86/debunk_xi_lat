@@ -1,9 +1,7 @@
 import itertools
-try:
-    import matplotlib.pyplot as plt
-except Exception:
-    plt = None
+import matplotlib.pyplot as plt
 import random
+
 class BlackJack:
 
     def profile(self):
@@ -52,7 +50,8 @@ class BlackJack:
                 hand_player[i].append(permuatations_deck.pop(0))
         while self.convert_A(hand_dealer) < ultis and len(hand_dealer) < 5:
             hand_dealer.append(permuatations_deck.pop(0))
-        
+
+    #Hàm sẽ quét tất cả các biến có sẵn, đừng sử dụng.
     def all_combo(self, player:int = 1, vizualize: bool = False):
         deck, quantity = self.profile()
 
@@ -944,4 +943,5 @@ if __name__ == "__main__":
     plt.ylabel('%')
     plt.legend()
     plt.show()
+
                         
